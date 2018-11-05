@@ -54,13 +54,13 @@ Le but du projet **THP - Semaine 6, Jour 1** est de _créer une application simp
 
 ###### D.Implémentation d'une feature - modifier son profil
 1. **TDD**
-* Le formulaire **Edit** renvoie une erreur si le prénom, nom ou email est invalide ✖
-* Tenter d'accéder à la **Edit Page** sans être connecté renvoie vers le **Login / Sign Up** ✖
-* Tenter d'accéder à la **Edit Page** d'un autre profil que le sien renvoie vers la **Home Page** et précise que l'accès au contenu est restreint ✖
+* Le formulaire **Edit** renvoie une erreur si le prénom, nom ou email est invalide ✔
+* Tenter d'accéder à la **Edit Page** sans être connecté renvoie vers le **Login / Sign Up** ✔
+* Tenter d'accéder à la **Edit Page** d'un autre profil que le sien renvoie vers la **Home Page** et précise que l'accès au contenu est restreint ✔
 2. **Création**
-* Création de la **Edit Page** comprenant un formulaire pour modifier ses informations ✖
-* Rendre la **Show Page** d'un autre **User** disponible pour les autres **Users** connectés ✖
-* Sur la **Club Page**, chaque **User** de la liste aura un lien vers sa **Show Page** ✖
+* Création de la **Edit Page** comprenant un formulaire pour modifier ses informations ✔
+* Rendre la **Show Page** d'un autre **User** disponible pour les autres **Users** connectés ✔
+* Sur la **Club Page**, chaque **User** de la liste aura un lien vers sa **Show Page** ✔
 
 ---
 ## V - PRESENTATION DE L'EQUIPE

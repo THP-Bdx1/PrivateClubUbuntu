@@ -74,14 +74,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_template "show"
   end
 
+# CE TEST REALISE PLUS TOT EST A PRESENT OBSOLETE AVEC LA DERNIERE VERSION DE L'APP
+# CELLE-CI REQUIERT A PRESENT DE POUVOIR CONSULTER LES SHOW D'AUTRES USERS
+
 # impossible d'accéder au show page d'un autre user
-  test "Thou shall not access to the show page of another user" do
-    get login_path
-       post login_path, params: { session: { email:    @user.email,
-                                             password: 'password' } }
-    get '/users/2'
-    assert_redirected_to '/'
-  end
+  # test "Thou shall not access to the show page of another user" do
+  #   get login_path
+  #      post login_path, params: { session: { email:    @user.email,
+  #                                            password: 'password' } }
+  #   get '/users/2'
+  #   assert_redirected_to '/'
+  # end
 
 # le formulaire edit renvoie une erreur si une entrée est invalide
 test "Thou shall not edit your profile with false information" do
@@ -89,19 +92,38 @@ test "Thou shall not edit your profile with false information" do
      post login_path, params: { session: { email:    @user.email,
                                            password: 'password' } }
   get '/users/1/edit'
-      update, params: { user: { first_name: "", last_name:"salut", email: "foo@bar.yes", password: "foobar", password_confirmation: "foobar" } }
-  assert_redirected_to 'users/1/edit'
-
+     patch user_path(@user), params: { user: { first_name: "", last_name:"salut", email: "foo@bar.yes", password: "foobar", password_confirmation: "foobar" } }
+  assert_template 'edit'
+  get '/users/1/edit'
+    patch user_path(@user), params: { user: { first_name: "      ", last_name:"salut", email: "foo@bar.yes", password: "foobar", password_confirmation: "foobar" } }
+  assert_template 'edit'
+  get '/users/1/edit'
+    patch user_path(@user), params: { user: { first_name: "salut", last_name:"", email: "foo@bar.yes", password: "foobar", password_confirmation: "foobar" } }
+  assert_template 'edit'
+  get '/users/1/edit'
+    patch user_path(@user), params: { user: { first_name: "salut", last_name:"      ", email: "foo@bar.yes", password: "foobar", password_confirmation: "foobar" } }
+  assert_template 'edit'
+  get '/users/1/edit'
+    patch user_path(@user), params: { user: { first_name: "salut", last_name:"salut", email: "foobar.yes", password: "foobar", password_confirmation: "foobar" } }
+  assert_template 'edit'
+  get '/users/1/edit'
+    patch user_path(@user), params: { user: { first_name: "salut", last_name:"salut", email: "foo@bar.yes", password: "foo", password_confirmation: "foo" } }
+  assert_template 'edit'
 end
 
 # tenter d'accéder à edit sans être connecté renvoie au login
-# test "Thou shall not edit anything without being connected" do
-#
-# end
+test "Thou shall not edit anything without being connected" do
+  get '/users/1/edit'
+  assert_redirected_to "/login"
+end
 
 # tenter d'accéder à un autre edit que le sien renvoie à la home
-# test "Thou shall not edit a profile that does not belong to you"
-#
-# end
+test "Thou shall not edit a profile that does not belong to you" do
+  get login_path
+    post login_path, params: { session: { email:    @user.email,
+                                         password: 'password' } }
+  get '/users/2/edit'
+  assert_redirected_to "/"
+end
 
 end
