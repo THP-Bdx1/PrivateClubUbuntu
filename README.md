@@ -5,6 +5,8 @@
 ---
 ## I - DISCLAIMER
 
+Si vous connaissez la fable du lièvre et de la tortue, sachez qu'on est lent comme la tortue et qu'on a pioncé comme le lièvre.
+
 ---
 ## II - INFORMATIONS
 
@@ -13,10 +15,15 @@ Le but du projet **THP - Semaine 6, Jour 1** est de _créer une application simp
 ---
 ## III - POUR COMMENCER
 
-1. `bundle install`
-2.
-3.
-4.
+1. `git clone`
+2. `bundle install`
+3. `rails db:create`
+4. `rails db:migrate`
+5. `rails test`
+6. `rails server`
+7. `localhost:3000`
+8. `?????????`
+9. `PROFIT !!!`
 
 ---
 ## IV - CAHIER DES CHARGES
