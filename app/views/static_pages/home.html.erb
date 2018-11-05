@@ -1,9 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
 <% if logged_in? %>
-<p> Salut <%=current_user.first_name.capitalize%>! </p>
-<a href='/club'> Quand on arrive dans le club </a>
+<br>
+<center><h1
+  style="background-image: url(https://risibank.fr/cache/stickers/d1066/106675-full.png);
+         background-repeat: no-repeat;
+         background-position: center;
+         color: red;
+         font-family: Papyrus;
+         font-size: 69px;
+         font-weight: 900;"><br><br>
+  Salut <%=current_user.first_name.capitalize%> !<br><br></h1></center>
+<br>
+<p style="background-color:powderblue;">Tu veux voir qui fait partie du club ? Clique <a href='/club'>ici</a> !</p>
 <%else%>
-<p> Salut!</p>
-<a href='/signup'> Pour l'inscription c'est ici! </a>
-</br>
-<a href='/login'> Pour se log, c'est là! </a>
+<br>
+<center><h1 class="title">Bienvenue sur le site du club sans Douich !</h1></center>
+<br>
+<p style="background-color:powderblue;">Pour rejoindre le club, c'est <a href='/signup'>ici</a> !</p>
+<br>
+<p style="background-color:darksalmon;">Déjà membre ? Clique <a href='/login'>ici</a> !</p>
+<br>
+<br>
+<br>
+<center><p style="background-color:tomato;">Cette ligne là est juste ici pour faire joli.</p></center>
 <% end %>
+</body>
+</html>

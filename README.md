@@ -7,6 +7,8 @@
 
 Si vous connaissez la fable du lièvre et de la tortue, sachez qu'on est lent comme la tortue et qu'on a pioncé comme le lièvre.
 
+Des messages d'une rare violence ont été dissimulés dans cette application. Faites attention à vous et sortez couvert, surtout.
+
 ---
 ## II - INFORMATIONS
 

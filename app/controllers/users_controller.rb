@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             log_in @user
-            flash[:success] = "Bienvenu sur notre super app!"
+            flash[:success] = "Bongeoure !"
             redirect_to '/'
           else
             render 'new'
@@ -26,10 +26,10 @@ class UsersController < ApplicationController
 
     def update
         if User.find(current_user.id).update(user_params)
-            flash[:success] = "Modifications faites"
+            flash[:success] = "Ton profil a été modifié !"
             redirect_to '/'
         else
-            flash.now[:danger] = "Modifications non valides"
+            flash.now[:danger] = "C'est non"
             render 'edit'
       end
     end

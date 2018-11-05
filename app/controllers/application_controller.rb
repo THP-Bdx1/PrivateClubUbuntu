@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
         unless logged_in?
 
-          flash[:danger] = "Tu dois être enregistré pour accéder à cette page, petit malin ;)"
+          flash[:danger] = "Alors, on essaie de tricher ? Tu cherches les ennuis ?"
 
           redirect_to login_path # halts request cycle
 
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     def require_id
 
       unless current_user.id.to_s == params[:id]
-        flash[:danger] = "Tu dois être l'utilisateur pour accéder à cette page, petit malin ;)"
+        flash[:danger] = "Et si j'te pète les doigts t'essaieras encore d'aller sur une page qu'est pas la tienne ?"
 
         redirect_to '/' # halts request cycle
       end
