@@ -1,8 +1,10 @@
 
 <h1> Profil utilisateur <h1>
 
-<ul> 
+<ul>
     <li> Prénom: <%= @user.first_name %> </li>
     <li> Nom: <%= @user.last_name %> </li>
     <li> Email: <%= @user.email %> </li>
-</ul> 
+</ul>
+
+<a href="<%=current_user.id%>/edit">Modifie tes données<a/>

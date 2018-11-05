@@ -1,8 +1,9 @@
 <% if logged_in? %>
-<p> Salut <%=current_user.first_name%>! </p>
+<p> Salut <%=current_user.first_name.capitalize%>! </p>
+<a href='/club'> Quand on arrive dans le club </a>
 <%else%>
 <p> Salut!</p>
-<a href='/signup'> Pour l'inscription c'est ici! </a> 
+<a href='/signup'> Pour l'inscription c'est ici! </a>
 </br>
 <a href='/login'> Pour se log, c'est là! </a>
 <% end %>
